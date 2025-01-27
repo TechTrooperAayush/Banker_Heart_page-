@@ -5,24 +5,7 @@ const popMenu = document.getElementById('pop-up-menu');
 const largerdevies = window.matchMedia('min-width:768px' && 'max-width:1024px');
 let navstatus = false;
 
-window.onresize = function(){
-    if(navbar.clientWidth >= 1024)
-        {
-            popMenu.style.display = "none";
-            navbar.style.height = "100px";
-        } 
-    else if(navbar.clientWidth <= 1024)
-    {
-        navbar.style.height = "80px";
-    }
-    else if (navbar.clientWidth <= 640){
-        navbar.style.height = "70px";
-    }
-        console.log("hello" + navbar.clientWidth);
-}
-
-let view = window.onscroll ;
- view = function(){
+window.onscroll = function(){
     
     let currentpos = window.pageYOffset;
 
@@ -42,6 +25,23 @@ let view = window.onscroll ;
 
     prevpos = currentpos;
 }
+
+window.onresize = function(){
+    if(navbar.clientWidth >= 1024)
+        {
+            popMenu.style.display = "none";
+            navbar.style.height = "100px";
+        } 
+    else if(navbar.clientWidth <= 1024)
+    {
+        navbar.style.height = "80px";
+    }
+    else if (navbar.clientWidth <= 640){
+        navbar.style.height = "70px";
+    }
+        console.log("hello" + navbar.clientWidth);
+}
+
 
 openBtn.addEventListener("click",function(){
 
